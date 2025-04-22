@@ -30,4 +30,14 @@ bitcoin = gets.chomp
 bitcoin = bitcoin.to_f
 
 # 3. inspect the bitcoin_data hash
-# puts bitcoin_data
+# puts bitcoin_data["USD"]
+
+# 1 Bitcoin is valued at $41405.1046 USD.
+# Your Bitcoin is worth $62107.6569.
+
+# extract current bitcoin data
+usd_bitcoin = bitcoin_data["USD"]["last"].round(2)
+puts "1 Bitcoin is valued at $#{usd_bitcoin} USD."
+# calculate value of user's bitcoin
+value=(usd_bitcoin*bitcoin).round(2)
+puts "Your Bitcoin is worth $#{value}."
